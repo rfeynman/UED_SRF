@@ -1,0 +1,1 @@
+pargraf edgraf.txt

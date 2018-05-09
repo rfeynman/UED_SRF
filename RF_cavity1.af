@@ -1,0 +1,50 @@
+1.3 GHz 3.5-Zellen-Gun-Resonator, komplett
+generated with code Cavity1 (J. Teichert, Version 3 - 05.01.2010) Modified by E. Wang to 1.5 cell
+; Tue Aug 19 10:50:20 2014
+; Parameter (mm):
+; Z0=    12.65000, Z1=    25.00000, R1=   102.57770, R2=    35.00000,
+; a1=     9.00000, b1=    16.00000, r0=    11.39600, r1=    11.39600,
+; R0=     6.00000, d0=    30.00000
+; Z2=    51.88720, a2=    12.00000, b2=    19.00000,r2=    37.10320,
+; Z3=    57.65000, R3=    35.00000, R5=   103.30000,a3=    12.00000,
+; b3=    19.00000, r3=    42.85650, Z4=    57.00000,R4=    39.00000,
+; a4=     9.00000, b4=    12.80000, r4=    43.06130,LTube=   100.00000
+; Rk=     5.00000, Zk=     2.00000, rk=     0.50000, rw=     0.50000,
+$reg kprob=1,  ;SUPERFISH problem
+ xreg= 3.50, kreg=100, kmax=500, ; x mesh spacing
+ yreg= 1.05, lreg=100, lmax=200, ; y mesh spacing
+ freq=1300,  ;starting frequency in MHz
+ nbslf=1, nbsrt=1, ; boundary condition
+ xdri=11.8537, ydri= 9.8300 ; drive points
+ beta=1,
+ kmethod=1,
+ icylin=1,
+ rmass=-1.0, 	! electron
+ IRTYPE=1,	! Normal (0) or superconducting (1)
+ NORM=                                    1 ;
+ CLENGTH=14.7187;
+ TEMPK=1.8,	!Superconducting operating temperature (K)
+ TC=9.2,		!Superconducting Critical Temperature (K)
+ RESIDR=1.0e-8,	!Residual Resistance
+$
+ 
+ 
+$po x=3, y=0$
+$po x=3, y=0.65$
+$po x= 3.1255, y= 9.1350 $ ; P7
+$po nt=2, x0= 4.2650, y0= 9.1182, r= 1.1396, x= 0.0000, y= 1.1396 $ ; P8
+$po nt=2, x0= 4.2650, y0= 9.1182, r= 1.1396, x= 1.1329, y= 0.1232 $ ; P9
+$po x= 5.8814, y= 4.7963 $ ; P10
+$po nt=2, x0= 6.7650, y0= 5.1000, a= 0.9000, b= 1.6000, x= 0.0000, y=-1.6000 $ ; P11
+
+$po nt=2, x0= 6.7650, y0= 5.4000, a= 1.2000, b= 1.9000, x= 1.1636, y=-0.4644 $ ; P12
+$po x= 8.2895, y= 7.2030 $ ; P13
+$po nt=2, x0=11.9537, y0= 6.6197, r= 3.7103, x= 0.0000, y= 3.7103 $ ; P14
+$po nt=2, x0=11.9537, y0= 6.0444, r= 4.2856, x= 4.1997, y= 0.8539 $ ; P15
+$po x=16.5765, y= 4.8178 $ ; P16
+$po nt=2, x0=17.7187, y0= 5.4000, a= 1.2000, b= 1.9000, x= 0.0000, y=-1.9000 $ ; P17
+
+
+$po x=30, y= 3.5000 $ ; P30
+$po x=30, y= 0.0000 $ ; P31
+$po x= 3, y= 0.0000 $ ; P32

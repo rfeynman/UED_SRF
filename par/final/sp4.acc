@@ -1,0 +1,140 @@
+run 1 1 1292.7068 -7.18787e-7  0.4e-6 7
+!45/2.35fs~30fs fwhm in side the cathode; 0.4eV; then get 1.8768e-6cm inside the cathode
+title
+ UED SRF gun test, R_cathode=0.01mm, 10 micro Amps, duty 1,  Bsol=550G, 1.5 deg, E_cath=15MeV
+
+
+
+
+
+
+
+!            #    l         r1                          r2                     a                        b
+
+
+input 9 20000 80.      1.800000000e-03  0.0029705  0.00891143   
+!r=0.5mm;rms longitudinal 100fs=0.0468deg
+
+
+
+
+
+CATHODE     0, 1, 1, 0., 0.3
+
+
+
+
+
+!xsubs 48 5 1
+cell 27 1.0 1 243 15  99 1 -1
+!200
+
+
+cfield 99
+RF_CAV01.t7
+
+
+!E0=1MV/m~Epeak=2.1MV/m~bpeak=5568a/m,if Hpeak=160mT,48MV/m,then E0=22.8
+
+
+
+drift 5.0 3.3 1
+drift 5.0 3.3 1
+drift 5.0 3.3 1
+drift 5.0 3.3 1
+drift 5.0 3.3 1
+drift 4.5 3.3 1
+drift 4.5 3.3 1
+drift 4.5 3.3 1
+drift 4.5 3.3 1
+drift 1.5 3.3 1
+!54.5cm
+!poisson 67.0  1.0  0.  0.  0  0  0  1
+
+!PERMSOL4.T7
+solenoid 10.0 10.0 1 1675
+!1238
+drift 5.0 3.3 1
+drift 5.0 3.3 1
+drift 5.0 3.3 1
+drift 5.0 3.3 1
+drift 5.0 3.3 1
+drift 5.0 3.3 1
+drift 5.0 3.3 1
+drift 5.0 3.3 1
+drift 5.0 3.3 1
+drift 5.0 3.3 1
+drift 5.0 3.3 1
+drift 5.0 3.3 1
+drift 5.0 3.3 1
+
+!solenoid 5.0 10.0 1 1350
+
+drift 5.0 3.3 1
+drift 5.0 3.3 1
+drift 5.0 3.3 1
+drift 5.0 3.3 1
+drift 5.0 3.3 1
+drift 5.0 3.3 1
+
+!solenoid 5.0 10.0 1 450
+drift 5.0 3.3 1
+drift 5.0 3.3 1
+drift 5.0 3.3 1
+drift 5.0 3.3 1
+drift 5.0 3.3 1
+drift 5.0 3.3 1
+drift 5.0 3.3 1
+drift 5.0 3.3 1
+drift 5.0 3.3 1
+drift 5.0 3.3 1
+drift 5.0 3.3 1
+drift 5.0 3.3 1
+drift 5.0 3.3 1
+drift 5.0 3.3 1
+!solenoid 3.0 1.0 1 1855
+drift 2.0 3.3 1
+drift 5.0 3.3 1
+drift 5.0 3.3 1
+drift 1.0 3.3 1
+drift 1.0 3.3 1
+drift 1.0 3.3 1
+drift 1.0 3.3 1
+drift 1.0 3.3 1
+drift 1.0 3.3 1
+drift 1.0 3.3 1
+drift 5.0 3.3 1
+drift 5.0 3.3 1
+drift 5.0 3.3 1
+drift 5.0 3.3 1
+
+
+zlimit 0.5
+zout 1000 10 0 200 0 0 0 0
+
+output 5
+!output 1
+
+scheff 6.46353e-6 0.003 0.03 30 200 0 0 7 1.5 0.0 0.0
+
+!5fC in 1.3GHz=6.46353e-6;0.5cm longitu length
+!scheff 213e-6 0.6 5.0 50 200 0 0 7 1.5 0.0 0.0
+!xsubs 1 1 2
+
+
+
+start -0.020       0.001 18000 1 50 !17 degrees
+continue 0.05  2000 1 10 !50 degrees totally 
+continue 0.2  1815 1 10 !363 degrees totally,end of gun 
+!save 1
+!restart 0.2 5000 1 10 
+!scheff 6.46353e-6 0.04 0.1 30 200 0 0 7 1.5 0.0 0.0
+continue 0.2  8210  1 10  !242 degrees totally,
+!continue 0.4 12500  1 10  !to be deleted later
+!scheff 1.3e-5 0.3 0.1 20 200 0 0 7 1.5 0.0 0.0
+!continue 0.4 8000 1 10
+!continue 0.5 10000 1 10
+!continue 1.0 991800 1 50 
+end
+
+
